@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/gallery-react-ts-main/static/css/main.90849fe1.css",
-    "main.js": "/gallery-react-ts-main/static/js/main.a7ee229f.js",
+    "main.css": "/gallery-react-ts-main/static/css/main.0490f698.css",
+    "main.js": "/gallery-react-ts-main/static/js/main.3c467a09.js",
     "static/js/787.ec704a7a.chunk.js": "/gallery-react-ts-main/static/js/787.ec704a7a.chunk.js",
     "static/media/remixicon.svg?t=1590207869815": "/gallery-react-ts-main/static/media/remixicon.9cedd2150922ead84869.svg",
     "static/media/remixicon.eot?t=1590207869815": "/gallery-react-ts-main/static/media/remixicon.5cb99e6cba5a4619063f.eot",
@@ -17,12 +17,12 @@
     "static/media/revicons.ttf": "/gallery-react-ts-main/static/media/revicons.57fd05d4ae650374c8de.ttf",
     "static/media/revicons.woff": "/gallery-react-ts-main/static/media/revicons.e8746a624ed098489406.woff",
     "index.html": "/gallery-react-ts-main/index.html",
-    "main.90849fe1.css.map": "/gallery-react-ts-main/static/css/main.90849fe1.css.map",
-    "main.a7ee229f.js.map": "/gallery-react-ts-main/static/js/main.a7ee229f.js.map",
+    "main.0490f698.css.map": "/gallery-react-ts-main/static/css/main.0490f698.css.map",
+    "main.3c467a09.js.map": "/gallery-react-ts-main/static/js/main.3c467a09.js.map",
     "787.ec704a7a.chunk.js.map": "/gallery-react-ts-main/static/js/787.ec704a7a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.90849fe1.css",
-    "static/js/main.a7ee229f.js"
+    "static/css/main.0490f698.css",
+    "static/js/main.3c467a09.js"
   ]
 }
