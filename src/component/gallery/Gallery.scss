@@ -1,5 +1,4 @@
 .gallery__wrap {
-    padding: 15px;
     overflow: hidden;
     .gallery__main-img {
         margin-bottom: 10px;
@@ -14,10 +13,10 @@
     .react-multi-carousel-list {
         .react-multi-carousel-track {
             .react-multi-carousel-item {
-                width: 84px !important;
+                width: 82px !important;
                 height: 82px;
                 .img__item {
-                    padding: 0 1px;
+                    padding: 0 6px;
                     border: 2px solid transparent;
                     img {
                         width: 100%;

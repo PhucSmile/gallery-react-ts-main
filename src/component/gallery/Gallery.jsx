@@ -36,7 +36,7 @@ const Gallery = () => {
         <div className="gallery">
             <Container>
                 <Row>
-                    <Col lg={5}>
+                    <Col lg={4}>
                         <div className="gallery__wrap">
                             <div className="gallery__main-img text-center">
                                 <img src={previewImg} alt="" onClick={HandleShowtoggle} />
@@ -88,7 +88,7 @@ const Gallery = () => {
                             </Carousel>
                         </div>
                     </Col>
-                    <Col lg={7}></Col>
+                    <Col lg={8}></Col>
                 </Row>
             </Container>
         </div>
