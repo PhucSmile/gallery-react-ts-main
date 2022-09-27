@@ -1,42 +1,48 @@
 import React, { useState } from 'react';
-import data from '../../assets/data/data';
-import './Modal.scss';
-
+import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-
-import { toggleActions } from '../../store/reducer';
 import { useDispatch } from 'react-redux';
+import { images } from '../../data';
+import { toggleActions } from '../../store/reducer';
+import './Modal.scss';
+
+// Gom các hàm có thể tái sử dụng này về 1 file utils
+const findPosition = (images, current) => images.findIndex((imgUrl) => imgUrl === current);
 
 const Modal = () => {
-  const [previewImg, setPreviewImg] = useState(data.img01);
+  const [previewImg, setPreviewImg] = useState(images[0]);
   const dispatch = useDispatch();
 
-  const HandleHideToggle = () => {
-    dispatch(toggleActions.toggle());
+  // Tên hàm bắt đầu bằng chữ thường
+  const handleHideToggle = () => dispatch(toggleActions.toggle());
+
+  const handlePrev = () => {
+    const index = findPosition(images, previewImg);
+    setPreviewImg(images[index > 0 ? index - 1 : images.length - 1]);
   };
 
-  const trumcateString = (str, num) => {
-    if (str?.length > num) {
-      return str.slice(0, num) + '...';
-    } else {
-      return str;
-    }
+  const handleNext = () => {
+    const index = findPosition(images, previewImg);
+    setPreviewImg(images[index < images.length - 1 ? index + 1 : 0]);
   };
+
+  // hàm đơn giản thì viết gọn lại,  Gom các hàm có thể tái sử dụng này về 1 file utils
+  const trumcateString = (str, num) => (str?.length > num ? str.slice(0, num) + '...' : str);
+
   return (
     <>
-      <div className="modal__overlay" onClick={HandleHideToggle}></div>
+      <div className="modal__overlay" onClick={handleHideToggle}></div>
       <div className="modal__content">
         <Container fluid>
           <Row>
             <Col lg={8}>
               <div className="content__img">
-                <span className="content__arrow left" onClick={() => setPreviewImg(data.img02)}>
+                <span className="content__arrow left" onClick={handlePrev}>
                   <i className="ri-arrow-left-s-line"></i>
                 </span>
                 <img src={previewImg} alt="" />
-                <span className="content__arrow right" onClick={() => setPreviewImg(data.img03)}>
+                <span className="content__arrow right" onClick={handleNext}>
                   <i className="ri-arrow-right-s-line"></i>
                 </span>
               </div>
@@ -51,31 +57,16 @@ const Modal = () => {
                 </h5>
                 <div className="content__list-imgs">
                   <Row>
-                    <Col lg={4}>
-                      <div className="img__item">
-                        <img src={data.img01} alt="gallery-img" onClick={() => setPreviewImg(data.img01)} />
-                      </div>
-                    </Col>
-                    <Col lg={4}>
-                      <div className="img__item">
-                        <img src={data.img02} alt="gallery-img" onClick={() => setPreviewImg(data.img02)} />
-                      </div>
-                    </Col>
-                    <Col lg={4}>
-                      <div className="img__item">
-                        <img src={data.img03} alt="gallery-img" onClick={() => setPreviewImg(data.img03)} />
-                      </div>
-                    </Col>
-                    <Col lg={4}>
-                      <div className="img__item">
-                        <img src={data.img04} alt="gallery-img" onClick={() => setPreviewImg(data.img04)} />
-                      </div>
-                    </Col>
-                    <Col lg={4}>
-                      <div className="img__item">
-                        <img src={data.img05} alt="gallery-img" onClick={() => setPreviewImg(data.img05)} />
-                      </div>
-                    </Col>
+                    {/* Dùng map */}
+                    {images.map((urlImg, index) => {
+                      return (
+                        <Col lg={4} key={index}>
+                          <div className="img__item">
+                            <img src={urlImg} alt="gallery-img" onClick={() => setPreviewImg(urlImg)} />
+                          </div>
+                        </Col>
+                      );
+                    })}
                   </Row>
                 </div>
               </div>
